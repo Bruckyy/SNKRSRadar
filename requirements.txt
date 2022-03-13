@@ -1,5 +1,4 @@
 requests
 bs4
-os
 tweepy
 time
