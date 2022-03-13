@@ -31,7 +31,6 @@ while(True):
             images_list.append(image['src'])
 
 
-
     i=0
     for fig in figures:
         date = fig.find('p', {'class':'headline-1'}).text + " " + fig.find('p', {'class':'headline-4'}).text
