@@ -19,6 +19,7 @@ def upload_image(text,filename):
 
 
 while(True):
+    print("True Loop")
     response = requests.get(url)
     soup = BeautifulSoup(response.text, "html.parser")
     section=soup.find('section', {"class" : "upcoming-section"})
@@ -27,6 +28,7 @@ while(True):
     allImages= soup.findAll('img', {'class' : 'image-component'})
     images_list = []
     for image in allImages:
+        print("Images Loop")
         if "https://secure-images.nike.com" in image['src']:
             images_list.append(image['src'])
 
@@ -34,6 +36,7 @@ while(True):
 
     i=0
     for fig in figures:
+        print("Fig loop")
         date = fig.find('p', {'class':'headline-1'}).text + " " + fig.find('p', {'class':'headline-4'}).text
         img = images_list[i].replace("&align=0,1","")
         name = fig.find('h3', {'class':'headline-5'}).text + " " + fig.find('h6', {'class':'headline-3'}).text
