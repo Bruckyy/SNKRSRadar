@@ -50,7 +50,8 @@ while(True):
                 try:
                  upload_image(name+"\n"+date,name+".jpg")
                  print(f"{name} : {date} | TWEETED SUCCESFULLY")
-                except:
+                except Exception as e:
                     print("Cannot tweet")
+                    print(e)
         i+=1
     sleep(60)
