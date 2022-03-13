@@ -47,6 +47,10 @@ while(True):
                     handler.write(img_data)
                 with open("posted.txt",'a') as f:
                     f.write(name+date+"\n")
-                upload_image(name+"\n"+date,name+".jpg")
+                try:
+                 upload_image(name+"\n"+date,name+".jpg")
+                 print(f"{name} : {date} | TWEETED SUCCESFULLY")
+                except:
+                    print("Cannot tweet")
         i+=1
     sleep(60)
